@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug');
+            $table->string('writer');
+            $table->enum('for', ["SD", "SMP", "SMA", "S1"]);
+            $table->text('content');
+            $table->text('banner')->nullable();
             $table->timestamps();
         });
     }

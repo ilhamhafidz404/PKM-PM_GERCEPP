@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta
             content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
             name="viewport"
@@ -71,9 +72,12 @@
         <script src="{{ asset('template/dist/assets/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
         <script src="{{ asset('template/dist/assets/modules/dropzonejs/min/dropzone.min.js') }}"></script>
         <script src="{{ asset('template/dist/assets/js/page/components-multiple-upload.js') }}"></script>
+        <script src="{{ asset('template/dist/assets/modules/sweetalert/sweetalert.min.js') }}"></script>
 
         <!-- Template JS File -->
         <script src="{{ asset('template/dist/assets/js/scripts.js') }}"></script>
         <script src="{{ asset('template/dist/assets/js/custom.js') }}"></script>
+
+        @yield('script')
     </body>
 </html>
