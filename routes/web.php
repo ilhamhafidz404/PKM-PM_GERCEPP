@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\QuizController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', DashboardController::class)->name('dashboard');
+Route::resource('/article', ArticleController::class);
+Route::resource('/quiz', QuizController::class);
+Route::resource('/video', VideoController::class);
+Route::resource('/user', UserController::class);
