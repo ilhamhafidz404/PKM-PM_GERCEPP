@@ -11,7 +11,7 @@
     </div>
     <div class="section-body">
         <div class="row">
-            @foreach ($articles as $article)
+            @forelse ($articles as $article)
                 <div class="col-12 col-md-4 col-lg-4">
                     <article class="article article-style-c">
                         <div class="article-header">
@@ -67,7 +67,25 @@
                         </div>
                     </article>
                 </div>
-            @endforeach
+            @empty
+                <div class="card col-12">
+                  <div class="card-body">
+                    <div class="empty-state" data-height="400">
+                      <div class="empty-state-icon">
+                        <i class="fas fa-question"></i>
+                      </div>
+                      <h2>Belum ada data artikel</h2>
+                      <p class="lead">
+                        Artikel belum ditemukan, silahkan buat artikel terlebih dahulu!
+                      </p>
+                      <a href="{{ route('article.create') }}" class="btn btn-primary mt-4">
+                        Tambah Artikel
+                      </a>
+                      {{-- <a href="#" class="mt-4 bb">Need Help?</a> --}}
+                    </div>
+                  </div>
+                </div>
+            @endforelse
         </div>
     </div>
   </section>
